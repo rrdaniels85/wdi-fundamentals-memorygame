@@ -23,9 +23,25 @@ var cards = [
 
 var cardsInPlay = [];
 
+var totalScore = 0;
+
+document.getElementById('userScore').textContent = totalScore;
+
 var checkForMatch = function (){
-  if (cardsInPlay[0] === cardsInPlay[1]) {
+  if (cardsInPlay[0] === cardsInPlay[1] ) {
       alert("You found a match!");
+      totalScore ++;
+      document.getElementById('userScore').textContent = totalScore;
+  } else {
+      alert("Sorry, try again.");
+  }
+};
+
+var checkForMatch1 = function (){
+  if (cardsInPlay[2] === cardsInPlay[3] ) {
+      alert("You found a match!");
+      totalScore ++;
+      document.getElementById('userScore').textContent = totalScore;
   } else {
       alert("Sorry, try again.");
   }
@@ -38,8 +54,10 @@ var flipCard = function () {
 	console.log(cards[cardId].cardImage);
 	console.log(cards[cardId].suit);
 	cardsInPlay.push(cards[cardId].rank);
-	if (cardsInPlay.length === 2) {
+	if (cardsInPlay.length === 2 ) {
 	checkForMatch();
+} 	if (cardsInPlay.length === 4) {
+	checkForMatch1();
 }
 };
 
