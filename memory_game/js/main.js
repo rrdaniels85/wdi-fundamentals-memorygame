@@ -55,7 +55,13 @@ var createBoard = function () {
 
 createBoard();
 
+var resetGame = function(){
+	createBoard();
+}
 
+var resetButton = document.querySelector('button');
+
+button.addEventListener('click', resetGame);
 
 
 
